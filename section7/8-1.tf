@@ -1,8 +1,10 @@
 resource "aws_lb" "example" {
-  name                       = "example"
-  load_balancer_type         = "application"
-  internal                   = false
-  idle_timeout               = 60
+  name               = "example"
+  load_balancer_type = "application"
+  internal           = false
+  idle_timeout       = 60
+
+  // falseにしてからterraform destroyを実行する
   enable_deletion_protection = true
 
   subnets = [
